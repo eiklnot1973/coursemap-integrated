@@ -1,0 +1,33 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  color: black;
+  background-color: #d9d9d9;
+  padding: 1rem 2rem;
+  box-sizing: border-box;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.auth {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.9rem;
+}
+
+.logout-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: black;
+  padding: 0;
+  margin: 0;
+  font-weight: 500;
+}

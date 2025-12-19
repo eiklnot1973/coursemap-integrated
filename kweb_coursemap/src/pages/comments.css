@@ -1,0 +1,331 @@
+.page-container {
+  display: flex;
+  flex-direction: column;
+  font-family: sans-serif;
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: #e1e1e1;
+}
+
+.main-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 32px 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.main-content * {
+  box-sizing: border-box;
+}
+
+.course-header {
+  position: relative;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.back-button {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 0;
+}
+
+.icon.back-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 4px;
+}
+
+.course-header h2 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.course-description {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.course-description p {
+  margin: 4px 0;
+}
+
+
+
+.course-comments-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.sort-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.icon.dropdown-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.course-comment-input-container {
+  margin-bottom: 32px;
+}
+
+.course-comment-textarea {
+  width: 100%;
+  background-color: #c0c0c0;
+  border: 1px solid #a0a0a0;
+  padding: 16px;
+  font-size: 16px;
+  resize: none;
+  outline: none;
+  font-family: inherit;
+}
+
+.course-comment-textarea::placeholder {
+  color: #505050;
+}
+
+/* Comment Item Styles */
+.course-comment-item {
+  display: flex;
+  margin-bottom: 24px;
+}
+
+.profile-image-placeholder {
+  width: 48px;
+  height: 48px;
+  background-color: #a0a0a0;
+  border-radius: 50%;
+  margin-right: 16px;
+  flex-shrink: 0;
+}
+
+.course-comment-body {
+  flex: 1;
+}
+
+.course-comment-meta {
+  margin-bottom: 8px;
+}
+
+.course-comment-username {
+  font-weight: 700;
+  margin-right: 12px;
+}
+
+.course-comment-date {
+  color: #606060;
+  font-size: 14px;
+}
+
+.course-comment-content p {
+  margin: 0 0 4px 0;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.course-comment-actions {
+  margin-top: 8px;
+}
+
+.like-container {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 6px;
+}
+
+.heart-filled {
+  fill: red;
+}
+
+.heart-outline {
+  fill: none;
+  stroke: black;
+  stroke-width: 2;
+}
+
+.like-count {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+
+
+.input-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 8px;
+  gap: 8px;
+}
+
+.cancel-btn, .submit-btn {
+  border: none;
+  background: none;
+  padding: 8px 16px;
+  border-radius: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.cancel-btn:hover {
+  background-color: #b8b8b8;
+}
+
+.submit-btn {
+  background-color: #000000;
+  color: white;
+}
+
+.submit-btn.disabled {
+  background-color: #f2f2f2;
+  color: #909090;
+  cursor: default;
+}
+
+.edit-container {
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.edit-field {
+  background: transparent;
+  padding-bottom: 4px;
+  margin-bottom: 4px;
+}
+
+.comment-field {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 4px 0;
+  font-size: 14px;
+  outline: none;
+  transition: border-bottom-color 0.2s;
+}
+
+.comment-field:focus {
+  border-bottom: 2px solid #0f0f0f;
+}
+
+
+
+.menu-container {
+  position: relative;
+  margin-left: auto;
+}
+
+.menu-trigger {
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  padding: 8px;
+  border-radius: 50%;
+  color: #0f0f0f;
+}
+
+.menu-trigger:active {
+  background-color: #e5e5e5;
+}
+
+.menu-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  border-radius: 4px;
+  padding: 8px 0;
+  z-index: 20;
+  min-width: 120px;
+}
+
+.menu-dropdown div {
+  padding: 10px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #0f0f0f;
+}
+
+.menu-dropdown div:hover {
+  background-color: #f2f2f2;
+}
+
+.menu-icon {
+  width: 20px;
+  height: 20px;
+  fill: #606060;
+}
+
+
+
+.course-comments-count {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 32px 0 0;
+}
+
+.sort-container {
+  position: relative;
+}
+
+.sort-btn {
+  background: none;
+  border: none;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #0f0f0f;
+}
+
+.sort-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  border-radius: 4px;
+  padding: 8px 0;
+  z-index: 10;
+  min-width: 150px;
+}
+
+.sort-dropdown div {
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.sort-dropdown div:hover {
+  background-color: #f2f2f2;
+}

@@ -1,0 +1,40 @@
+# General
+node_modules/
+dist/
+build/
+.DS_Store
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# IDEs
+.idea
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Testing
+coverage/
+
+# Project specific
+curriculum-roadmap/dist
+curriculum-roadmap/node_modules
+kweb_coursemap/dist
+kweb_coursemap/node_modules
