@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import './profile.css';
@@ -21,6 +21,8 @@ function Profile() {
     const [username, setUsername] = useState<string | null>(null);
     const [nickname, setNickname] = useState<string | null>(null);
     const [comments, setComments] = useState<MyComment[]>([]);
+
+    const navigate = useNavigate();
     
     useEffect(() => {
         const storedUsername = localStorage.getItem("username");
@@ -70,6 +72,23 @@ function Profile() {
 
         fetchMyComments();
     }, []);
+
+    const handleDelete = async (commentId: number) => {
+      const confirmed = window.confirm('댓글을 삭제하시겠습니까?');
+      if (!confirmed) return;
+
+      try {
+        const token = localStorage.getItem("accessToken");
+
+        await axios.delete(`/courses/comments/${commentId}`, {
+          headers: {Authorization: `Bearer ${token}`}
+        });
+
+        setComments((prev) => prev.filter((c) => c.id !== commentId));
+      } catch (error) {
+        alert('백엔드X');
+      }
+    }
     
     return (
       <div className="container">
@@ -96,6 +115,15 @@ function Profile() {
                   </div>
                   <div className="comment-content">
                     {item.content}
+                  </div>
+                  <div className="comment-actions">
+                    <div className="icon-btn" 
+                        onClick={()=>navigate(`/comments/${item.id}/edit`, {state: {content: item.content}})}>
+                      <svg viewBox="0 0 24 24" className="menu-icon"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path></svg>
+                    </div>
+                    <div className="icon-btn" onClick={()=>handleDelete(item.id)}>
+                      <svg viewBox="0 0 24 24" className="menu-icon"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"></path></svg>
+                    </div>
                   </div>
                 </div>
               ))}

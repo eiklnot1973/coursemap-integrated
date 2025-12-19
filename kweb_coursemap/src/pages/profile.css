@@ -68,6 +68,9 @@
 }
 
 .comment-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     background-color: #f1f1f1;
     border-radius: 8px;
     padding: 1rem;
@@ -76,8 +79,26 @@
 
 .comment-course {
     font-weight: 600;
+    color: black;
 }
 
 .comment-content {
-    margin-top: 0.5rem;
+    color: black;
+}
+
+.comment-actions {
+    display: flex;
+    justify-content: right;
+    gap: 0.5rem;
+
+}
+
+.icon-btn {
+    cursor: pointer;
+}
+
+.menu-icon {
+  width: 20px;
+  height: 20px;
+  fill: #606060;
 }

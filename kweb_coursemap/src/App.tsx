@@ -7,6 +7,7 @@ import Signup from './pages/signup'
 import Profile from './pages/profile'
 import ProfileEdit from './pages/profile-edit'
 import Comments from './pages/comments'
+import CommentEdit from './pages/comment-edit'
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <Route path="/profile" element={<Profile />} />
       <Route path="/profile-edit" element={<ProfileEdit />} />
       <Route path="/comments" element={<Comments />} />
+      <Route path="/comments/:commentId/edit" element={<CommentEdit />} />
     </Routes>
   );
 }
